@@ -51,7 +51,7 @@ function OnSuccess(json){
 }
 
 function templateGeoList(GeoListArr){
-return `<li>${GeoListArr.properties.list}</li>`;
+return `<li>${GeoListArr.properties.title}</li>`;
 }
 
   }
