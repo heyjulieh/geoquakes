@@ -3,6 +3,8 @@ var weekly_quakes_endpoint = "http://earthquake.usgs.gov/earthquakes/feed/v1.0/s
 
 $(document).on("ready", function() {
 
+$quakeList = $('#info');
+
 // when ready, render Map
 getAndRenderMap();
 
@@ -41,23 +43,26 @@ $.ajax({
 // the response is passed to the function
 // success: onSuccess,
 
-
+function templateGeoList(GeoListArr){
+return `<hr>\n<p>${GeoListArr.properties.title}<p>`
+console.log(templateGeoList(GeoListArr));
+}
 
 function OnSuccess(json){
 // need forEach loop
   var GeoListArr = json.features;
-  for (let GeoList of GeoListArr){
-    $('#info').append(templateGeoList(GeoListArr));
-}
+  var quakeHTML;
+  var lat, long;
+  GeoListArr.forEach(function(element){
+    quakeHTML = templateGeoList(element);
+    $quakeList.append(quakeHTML);
 
-function templateGeoList(GeoListArr){
-return `<li>${GeoListArr.properties.list}</li>`;
+  });
 }
 
   }
 
 
-}
   // append list to info id
   // Code to run if the request fails; the raw request and
   // status codes are passed to the function
