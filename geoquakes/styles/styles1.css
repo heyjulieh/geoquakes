@@ -1,0 +1,35 @@
+.container {
+  padding-bottom: 50px;
+  margin-top: 50px;
+  clear: both;
+  height: 600px;
+  width: 1400px;
+
+}
+
+#map {
+  display: block;
+  height: 600px;
+  margin: auto;
+  padding: 0;
+  clear: both;
+}
+
+#info {
+  margin: auto;
+  padding: 0;
+  height: 600px;
+  display: block;
+  clear: both;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  color: grey;
+  overflow: scroll;
+}
+
+
+h1 {
+  font-family: Helvetica, sans-serif;
+  font-size: 25px;
+  color: black;
+}
